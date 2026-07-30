@@ -1,4 +1,4 @@
-# DCS Mission Composer
+# DCS Mission Composer (DMC)
 
 DCS Mission Composer is a desktop application for collaborative DCS mission planning.
 
