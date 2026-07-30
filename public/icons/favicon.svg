@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="field" x1="7" y1="6" x2="57" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c2830"/>
+      <stop offset=".46" stop-color="#111820"/>
+      <stop offset="1" stop-color="#111316"/>
+    </linearGradient>
+    <linearGradient id="border" x1="5" y1="4" x2="59" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b3eee6"/>
+      <stop offset=".45" stop-color="#84c7bd"/>
+      <stop offset="1" stop-color="#7ed68b"/>
+    </linearGradient>
+    <linearGradient id="flap" x1="40" y1="3" x2="55" y2="19" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d8fff9"/>
+      <stop offset=".28" stop-color="#9edbd2"/>
+      <stop offset=".68" stop-color="#4f8c86"/>
+      <stop offset="1" stop-color="#1a2b31"/>
+    </linearGradient>
+    <filter id="word-shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx=".8" dy="1" stdDeviation=".75" flood-color="#020405" flood-opacity=".62"/>
+    </filter>
+    <clipPath id="document">
+      <path d="M10 4h31l13 13v43H10z"/>
+    </clipPath>
+  </defs>
+  <path d="M10 4h31l13 13v43H10z" fill="url(#field)"/>
+  <g clip-path="url(#document)">
+    <path d="M14 4v56M22 4v56M30 4v56M38 4v56M46 4v56M54 4v56M10 12h44M10 20h44M10 28h44M10 36h44M10 44h44M10 52h44" stroke="#8fa0ad" stroke-width=".55" opacity=".11"/>
+  </g>
+  <path d="M41 4v14h13z" fill="url(#flap)"/>
+  <path d="M41 18h13" stroke="#0c151d" stroke-width=".8" opacity=".38"/>
+  <path d="M10 4h31l13 13v43H10z" fill="none" stroke="url(#border)" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="31.5" y="39" fill="#f4f7fb" filter="url(#word-shadow)" font-family="Segoe UI, Arial, sans-serif" font-size="16.5" font-style="italic" font-weight="900" text-anchor="middle" letter-spacing="-.7">DMC</text>
+</svg>
