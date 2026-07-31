@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <filter id="unit-shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx=".7" dy="1" stdDeviation=".55" flood-color="#020405" flood-opacity=".62"/>
+    </filter>
+    <linearGradient id="route-main" x1="13" y1="48" x2="51" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#58b8c7"/>
+      <stop offset=".48" stop-color="#78c7bd"/>
+      <stop offset="1" stop-color="#4fa85f"/>
+    </linearGradient>
+    <linearGradient id="route-red" x1="22" y1="28" x2="37" y2="10" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b63f43"/>
+      <stop offset="1" stop-color="#ff746e"/>
+    </linearGradient>
+    <linearGradient id="node-blue" x1="9" y1="43" x2="18" y2="53" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8ee0d7"/>
+      <stop offset="1" stop-color="#337fa8"/>
+    </linearGradient>
+    <linearGradient id="node-red" x1="24" y1="11" x2="36" y2="25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff8d86"/>
+      <stop offset="1" stop-color="#a93035"/>
+    </linearGradient>
+    <linearGradient id="node-green" x1="47" y1="35" x2="55" y2="45" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9ee5a8"/>
+      <stop offset="1" stop-color="#3d8f4d"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#unit-shadow)" stroke-linecap="round" stroke-linejoin="round" transform="translate(32 32) scale(1.18) translate(-32 -32)">
+    <path d="M13 48L30 18L51 40" fill="none" stroke="#071015" stroke-width="10" opacity=".55"/>
+    <path d="M13 48L30 18L51 40" fill="none" stroke="url(#route-main)" stroke-width="7"/>
+    <path d="M13 48L30 18" fill="none" stroke="url(#route-red)" stroke-width="7" opacity=".28"/>
+    <circle cx="13" cy="48" r="5.5" fill="url(#node-blue)"/>
+    <circle cx="30" cy="18" r="8" fill="url(#node-red)"/>
+    <circle cx="30" cy="18" r="3.8" fill="none" stroke="#111820" stroke-width="1.75"/>
+    <path d="M30 11.2V14.2M30 21.8V24.8M23.2 18H26.2M33.8 18H36.8" fill="none" stroke="#111820" stroke-width="1.75" stroke-linecap="round"/>
+    <circle cx="30" cy="18" r=".95" fill="#111820"/>
+    <circle cx="51" cy="40" r="5.5" fill="url(#node-green)"/>
+  </g>
+</svg>

@@ -37,6 +37,7 @@ select {
 }
 
 .shell {
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -62,6 +63,38 @@ select {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 9px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.34));
+  pointer-events: none;
+}
+
+.brand-copy {
+  min-width: 0;
+}
+
+.app-version {
+  position: absolute;
+  right: 16px;
+  bottom: 6px;
+  z-index: 2;
+  color: rgba(143, 160, 173, 0.64);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .github-button,

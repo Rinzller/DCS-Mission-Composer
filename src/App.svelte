@@ -35,6 +35,7 @@
   type AppInfo = {
     version: string;
     github_repo_url: string;
+    github_releases_url: string;
   };
 
   type FlightInfo = {
@@ -515,7 +516,7 @@
       return;
     }
 
-    const apiUrl = githubApiUrl(info.github_repo_url);
+    const apiUrl = githubApiUrl(info.github_releases_url);
 
     if (!apiUrl) {
       updateState = "error";
@@ -741,7 +742,12 @@
 <main class="shell">
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <header class="app-header" data-tauri-drag-region on:mousedown={startWindowDrag}>
-    <p class="eyebrow" data-tauri-drag-region>DCS Mission Composer</p>
+    <div class="brand" data-tauri-drag-region>
+      <img class="brand-mark" src="/icons/app-mark.svg" alt="" data-tauri-drag-region />
+      <div class="brand-copy" data-tauri-drag-region>
+        <p class="eyebrow" data-tauri-drag-region>DCS Mission Composer</p>
+      </div>
+    </div>
     <div class="header-actions">
       <button
         class="update-button"
@@ -1079,4 +1085,6 @@
       </div>
     </section>
   {/if}
+
+  <span class="app-version" data-tauri-drag-region>{appInfo ? `v${appInfo.version}` : "v..."}</span>
 </main>

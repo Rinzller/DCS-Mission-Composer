@@ -26,7 +26,7 @@ export const MOCK_LATEST_RELEASE: GitHubRelease | null = null;
 // };
 
 export const githubApiUrl = (repoUrl: string) => {
-  const match = repoUrl.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\/?$/);
+  const match = repoUrl.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+?)(?:\/releases(?:\/.*)?)?\/?$/);
   return match ? `https://api.github.com/repos/${match[1]}/${match[2]}/releases/latest` : "";
 };
 

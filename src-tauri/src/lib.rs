@@ -7,11 +7,13 @@ mod merger;
 use std::path::{Path, PathBuf};
 
 const GITHUB_REPO_URL: &str = "https://github.com/Rinzller/DCS-Mission-Composer";
+const GITHUB_RELEASES_URL: &str = "https://github.com/Rinzller/DCS-Mission-Composer/releases";
 
 #[derive(serde::Serialize)]
 struct AppInfo {
     version: &'static str,
     github_repo_url: &'static str,
+    github_releases_url: &'static str,
 }
 
 fn ensure_distinct_paths(paths: &[(&str, &PathBuf)]) -> Result<(), String> {
@@ -225,6 +227,7 @@ fn get_app_info() -> AppInfo {
     AppInfo {
         version: env!("CARGO_PKG_VERSION"),
         github_repo_url: GITHUB_REPO_URL,
+        github_releases_url: GITHUB_RELEASES_URL,
     }
 }
 
