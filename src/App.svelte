@@ -61,6 +61,7 @@
   const REVIEW_TYPEWRITER_MAX_CHARS = 900;
   const LARGE_REVIEW_INTRO_HOLD_MS = 1200;
   const LARGE_REVIEW_DOT_INTERVAL_MS = 420;
+  const STARTUP_LOADER_MIN_MS = 850;
   // Set true in dev/tests to preview the large-mission review path with a normal mission.
   const FORCE_LARGE_REVIEW_RENDER = false;
   const reviewProgressText = "Opening mission archives...\nReading mission data...\nComparing mission changes...";
@@ -94,6 +95,7 @@
   let appInfo: AppInfo | null = null;
   let updateState: UpdateState = "idle";
   let latestRelease: GitHubRelease | null = null;
+  let startupLoading = true;
   const appWindow = getCurrentWindow();
 
   const validateMission = async (slot: Slot, path: string) => {
@@ -678,6 +680,14 @@
 
   onMount(() => {
     let unlisten: (() => void) | undefined;
+    const startupStartedAt = Date.now();
+    const finishStartup = () => {
+      const remaining = Math.max(0, STARTUP_LOADER_MIN_MS - (Date.now() - startupStartedAt));
+      window.setTimeout(() => {
+        startupLoading = false;
+      }, remaining);
+    };
+
     window.addEventListener("keydown", handleGlobalKeydown);
 
     getCurrentWebview()
@@ -713,7 +723,7 @@
         unlisten = handler;
       });
 
-    invoke<string>("get_log_file_path")
+    const logPathRequest = invoke<string>("get_log_file_path")
       .then((path) => {
         logPath = path;
       })
@@ -721,7 +731,7 @@
         logMessage = error instanceof Error ? error.message : String(error);
       });
 
-    invoke<AppInfo>("get_app_info")
+    const appInfoRequest = invoke<AppInfo>("get_app_info")
       .then((info) => {
         appInfo = info;
         void checkForUpdates(info);
@@ -729,6 +739,8 @@
       .catch(() => {
         updateState = "error";
       });
+
+    void Promise.allSettled([logPathRequest, appInfoRequest]).then(finishStartup);
 
     return () => {
       window.removeEventListener("keydown", handleGlobalKeydown);
@@ -740,6 +752,18 @@
 </script>
 
 <main class="shell">
+  {#if startupLoading}
+    <section class="startup-loader" aria-label="Starting DCS Mission Composer">
+      <img class="startup-mark" src="/icons/app-mark.svg" alt="" />
+      <div class="startup-route" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p>DCS Mission Composer</p>
+    </section>
+  {/if}
+
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <header class="app-header" data-tauri-drag-region on:mousedown={startWindowDrag}>
     <div class="brand" data-tauri-drag-region>
