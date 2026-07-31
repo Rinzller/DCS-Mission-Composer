@@ -250,9 +250,10 @@ select {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 1px;
+  height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #84c7bd, #7ed68b);
+  background: linear-gradient(90deg, #58b8c7 0%, #84c7bd 48%, #7ed68b 100%);
+  box-shadow: 0 0 10px rgba(126, 214, 139, 0.28), 0 0 16px rgba(88, 184, 199, 0.18);
   content: "";
 }
 
