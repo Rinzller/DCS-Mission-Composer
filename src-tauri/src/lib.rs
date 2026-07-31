@@ -6,7 +6,7 @@ mod merger;
 
 use std::path::{Path, PathBuf};
 
-const GITHUB_REPO_URL: &str = "https://github.com/jrser/DCS-Mission-Composer";
+const GITHUB_REPO_URL: &str = "https://github.com/Rinzller/DCS-Mission-Composer";
 
 #[derive(serde::Serialize)]
 struct AppInfo {

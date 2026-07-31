@@ -1,6 +1,6 @@
 [package]
 name = "dcs-mission-composer"
-version = "0.1.0"
+version = "0.1.1"
 description = "A desktop application for collaborative DCS mission planning."
 authors = ["DCS Mission Composer contributors"]
 edition = "2021"

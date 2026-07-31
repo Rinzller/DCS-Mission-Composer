@@ -15,12 +15,12 @@ export type GitHubRelease = {
 export const MOCK_LATEST_RELEASE: GitHubRelease | null = null;
 // export const MOCK_LATEST_RELEASE: GitHubRelease | null = {
 //   tag_name: "v0.2.0",
-//   html_url: "https://github.com/jrser/DCS-Mission-Composer/releases/tag/v0.2.0",
+//   html_url: "https://github.com/Rinzller/DCS-Mission-Composer/releases/tag/v0.2.0",
 //   assets: [
 //     {
 //       name: "DCS-Mission-Composer_0.2.0_windows_x86_64-setup.exe",
 //       browser_download_url:
-//         "https://github.com/jrser/DCS-Mission-Composer/releases/download/v0.2.0/DCS-Mission-Composer_0.2.0_windows_x86_64-setup.exe",
+//         "https://github.com/Rinzller/DCS-Mission-Composer/releases/download/v0.2.0/DCS-Mission-Composer_0.2.0_windows_x86_64-setup.exe",
 //     },
 //   ],
 // };
