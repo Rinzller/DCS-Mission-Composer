@@ -48,7 +48,7 @@ jobs:
         with:
           tagName: ${{ github.ref_name }}
           releaseName: DCS Mission Composer ${{ github.ref_name }}
-          releaseBody: Windows installer attached below.
+          generateReleaseNotes: true
           releaseDraft: false
           prerelease: ${{ contains(github.ref_name, '-') }}
           uploadUpdaterJson: false
