@@ -10,10 +10,10 @@ The goal is simple: keep mission ownership and secrecy intact while making reali
 
 ## Features
 
-- Validate dropped or selected `.miz` files as ZIP-based DCS mission archives.
+- Validate dropped or selected `.miz` files.
 - Export BLUE or RED coalition planning missions.
 - Export individual client/player flights by airframe and group name.
-- Embed a DCS Mission Composer manifest in exported planning missions.
+- Embeds a DCS Mission Composer manifest in exported planning missions.
 - Compare an original mission against a modified planning mission.
 - Summarize mission changes in a readable review panel.
 - Detect merge-blocking warnings before writing output.
@@ -21,8 +21,7 @@ The goal is simple: keep mission ownership and secrecy intact while making reali
 - Override blocked merges with an explicit confirmation flow.
 - Preserve DTC and mission-editor changes in supported merge paths.
 - Save merged/exported missions without overwriting loaded mission files.
-- Show installed app version and check GitHub Releases for updates.
-- Download the latest installer from the update prompt.
+- Automatic DMC application update detection.
 - Copy the local log file path for bug reports.
 
 ## Installation
