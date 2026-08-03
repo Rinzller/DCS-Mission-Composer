@@ -24,7 +24,6 @@ The goal is simple: keep mission ownership and secrecy intact while making reali
 - Show installed app version and check GitHub Releases for updates.
 - Download the latest installer from the update prompt.
 - Copy the local log file path for bug reports.
-- Custom frameless window with minimize and close controls.
 
 ## Installation
 
